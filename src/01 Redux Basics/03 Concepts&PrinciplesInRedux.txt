@@ -1,0 +1,50 @@
+[03] Three Core Concepts of Redux
+
+Cake Shop - Analogy
+
+	Entities
+		• Shop - Stores cakes on a shelf	
+		• Shopkeeper - Behind the counter
+		• Customer - At the store entrance                   
+	Activities
+		• Customer - Orders a cake
+		• Shopkeeper - Boxes a cake form the shelf
+				         - Gives receipt to keep track
+
+	Cake Shop Scenario	|  Redux	  |  Purpose
+	Shop					      |  Store	  |  Holds the state of your application
+	Cake Ordered			  |  Action	  |	 Describes what happened
+	Shopkeeper				  |  Reducer  |	 Ties the store and actions together
+	
+	• A store holds the state of your application.
+	• An action describes what happened in the application.
+	• A reducer handles the action and decides how to update the state.
+
+[04] Three Principles (Describe the redux pattern)
+
+	1. Global state of your app is stored as an object inside a single store.
+		• Maintain our app state in a single object which would be managed by the Redux store.
+
+	Cake Shop analogy - Lets assume we are tracking the number of cakes on the shelf. We would then represent the state of our app as a single object that contains a property indicating number of cakes. This object will be managed by the redux store.
+	{
+		numberOfCakes: 10
+	}
+
+	2. The only way to change the state is to dispatch an action, an object that describes what happened.
+		• To update the state of your app, you need to let Redux know about that with an action. You are not allowed to directly update the state object.
+
+	Cake Shop analogy - We are not allowed to take the cake directly off the shelf. We will have to scan the QR code and place an order - CAKE_ORDERED (action is an object with a type property describing the event)
+	{
+		type: "CAKE_ORDERED"
+	}
+
+	3. To specify how the state tree is updated based on actions, you write pure reducers.
+		• Pure reducers are basically pure functions that take previousState and action as inputs and return the next state. (Being a pure function, a reducer should return a newState instead of modifying/updating the previousState).
+
+	Cake Shop analogy - A function that takes the currentState and action as parameters. Based on the action type, a new state object is returned. And for a given input this behaviour should always be same.
+	const reducer = (state, action) {
+		switch (action.type) {
+			case "CAKE_ORDERED" : 
+				return {numberOfCakes: state.numberOfCakes - 1}
+		}
+	}
