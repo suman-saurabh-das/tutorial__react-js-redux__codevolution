@@ -1,7 +1,8 @@
-// [04] - [08] BASIC REDUX APP
+// [04] - [09] BASIC REDUX APP
 
 const redux = require('redux')
 const createStore = redux.createStore
+const bindActionCreators = redux.bindActionCreators
 
 const CAKE_ORDERED = 'CAKE_ORDERED'
 const CAKE_RESTOCKED = 'CAKE_RESTOCKED'
@@ -50,10 +51,16 @@ const unsubscribe = store.subscribe(() => {
 })
 
 // dispatching actions
-store.dispatch(orderCakes())
-store.dispatch(orderCakes())
-store.dispatch(orderCakes())
-store.dispatch(restockCakes(3))
+// store.dispatch(orderCakes())
+// store.dispatch(orderCakes())
+// store.dispatch(orderCakes())
+// store.dispatch(restockCakes(3))
+
+const actions = bindActionCreators({ orderCakes, restockCakes }, store.dispatch)
+actions.orderCakes()
+actions.orderCakes()
+actions.orderCakes()
+actions.restockCakes(3)
 
 unsubscribe()
 
@@ -82,4 +89,12 @@ unsubscribe()
 
     To get the state, use store.getState()
     To modify a state, use store.dispatch(action) passing in the action
+
+  Binding action creators
+    Till now we have invoked dispatch on the store and passed in the action.
+    Alternatively we can use a helper function that redux provides - bindActionCreators()
+      bindActionCreators() takes in 2 arguments
+        1st - Object containing all the action creators
+        2nd - What we want the object to bind to
+    bindActionCreators() turns an object whose values are action creators into an object with same keys but with every action creator wrapped into a dispatch call so that may be invoked directly.
 */
