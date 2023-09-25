@@ -1,8 +1,9 @@
-// [11] SINGLE REDUCER
+// [12] COMBINING MULTIPLE REDUCERS
 
 const redux = require('redux');
 const createStore = redux.createStore;
 const bindActionCreators = redux.bindActionCreators;
+const combineReducers = redux.combineReducers;
 
 // Actions
 const CAKE_ORDERED = 'CAKE_ORDERED';
@@ -36,14 +37,16 @@ const restockIceCream = (qty = 1) => {
   }
 };
 
-// Initial State
-const initialState = {
+// Initial States
+const initialCakeState = {
   numOfCakes: 10,
+};
+const initialIceCreamState = {
   numOfIceCreams: 20,
 };
 
-// Reducer
-const reducer = (state = initialState, action) => {
+// Reducers
+const cakeReducer = (state = initialCakeState, action) => {
   switch (action.type) {
     case CAKE_ORDERED: return {
       ...state,
@@ -53,6 +56,12 @@ const reducer = (state = initialState, action) => {
       ...state,
       numOfCakes: state.numOfCakes + action.payload
     }
+    default: return state
+  }
+};
+
+const iceCreamReducer = (state = initialIceCreamState, action) => {
+  switch (action.type) {
     case ICECREAM_ORDERED: return {
       ...state,
       numOfIceCreams: state.numOfIceCreams - action.payload
@@ -65,8 +74,14 @@ const reducer = (state = initialState, action) => {
   }
 };
 
+// Combining reducers
+const rootReducer = combineReducers({
+  cake: cakeReducer,
+  iceCream: iceCreamReducer,
+})
+
 // Store
-const store = createStore(reducer)
+const store = createStore(rootReducer)
 console.log('Initial state : ', store.getState());
 
 // Adding Listener
@@ -76,7 +91,7 @@ const unsubscribe = store.subscribe(() => {
 
 // Binding action creator
 const actions = bindActionCreators(
-  {orderCake, restockCake, orderIceCream, restockIceCream},
+  { orderCake, restockCake, orderIceCream, restockIceCream },
   store.dispatch
 )
 
@@ -90,4 +105,12 @@ actions.restockIceCream(4)
 
 unsubscribe()
 
-// Single reducer function which is responsible for updating the cake and icecream state.
+/*
+  By using multiple Reducers - We will basically split the reducers and state.
+
+  The reducer functions are much simpler now.
+  cakeReducer is only bothered about cake state and the logic to update cake state.
+  iceCreamReducer is only bothered about iceCream state and the logic to update iceCream state.
+    
+  Each reducer cannot update the other reducer state even if it wanted to since we are only passing the necessary part of the application state (initialCake / initialIceCream).
+*/
