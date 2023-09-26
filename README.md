@@ -25,7 +25,7 @@ I have used `node.js`, `redux`
   - run `npm run`
 - Additional Libraries
   - redux | https://www.npmjs.com/package/redux
-  - 
+  - immer | https://www.npmjs.com/package/immer
 
 ## Status
 
