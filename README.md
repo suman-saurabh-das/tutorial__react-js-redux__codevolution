@@ -26,7 +26,7 @@ I have used `node.js`, `redux`
 - Additional Libraries
   - redux | https://www.npmjs.com/package/redux
   - immer | https://www.npmjs.com/package/immer
-
+  - redux-logger | https://www.npmjs.com/package/redux-logger
 ## Status
 
 - React Redux is in progress.
