@@ -13,7 +13,15 @@ React Redux (redux-toolkit) Tutorial - by Codevolution
 ## Course Content
 
 - Section 01
-
+  - Introduction to Redux, project setup
+  - Concepts & principles in redux
+  - Actions, Reducers, Store & CakeShop app
+  - Binding action creators
+  - Single reducer with multiple states
+  - Combining multiple reducers
+  - Immer library to update state as a mutable value
+  - Logger middleware to log updates
+  - Async Action using Redux Thunk Middleware
 
 ## Technologies
 
@@ -24,9 +32,12 @@ I have used `node.js`, `redux`
 - download or clone the repository
   - run `npm run`
 - Additional Libraries
-  - redux | https://www.npmjs.com/package/redux
+  - axios | https://www.npmjs.com/package/axios
   - immer | https://www.npmjs.com/package/immer
+  - redux | https://www.npmjs.com/package/redux
   - redux-logger | https://www.npmjs.com/package/redux-logger
+  - redux-thunk | https://www.npmjs.com/package/redux-thunk
+
 ## Status
 
 - React Redux is in progress.
