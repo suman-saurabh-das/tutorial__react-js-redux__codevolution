@@ -1,0 +1,34 @@
+[17] Redux toolkit - Intro
+
+Redux concerns
+	• Redux requires too much boilerplate code
+		○ Action
+		○ Action object
+		○ Action creator
+		○ Switch statement in a reducer
+	• A lot of other packages have to be installed to work with redux
+		○ Redux-thunk - for async actions
+		○ Immer - for handling nested state updates
+		○ Redux-devtools - helps in debugging
+Hence, there was a need to improve the developer experience for redux
+
+Redux Toolkit
+	• It is the official, opinionated, batteries-included toolset for efficient Redux development
+		○ Abstracts over the setup process
+		○ Handles the most common use cases
+    ○ Includes some useful utilities
+    
+[18] Project Setup
+
+Create a new folder -> redux-toolkit-basics
+
+In terminal Run
+	• npm init --yes | (initialize a package.json file with default settings)
+	• npm install @reduxjs/toolkit | (adding redux-toolkit as a dependency)
+    
+    Create a new file - index.js
+    Create a new Folder app
+	    Create a new file -> store.js
+    Create a folder - features
+	    Create a folder -> cake (will contain the action, reducer and all connected parts)
+      Create a folder -> icecream

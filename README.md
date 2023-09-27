@@ -23,6 +23,9 @@ React Redux (redux-toolkit) Tutorial - by Codevolution
   - Logger middleware to log updates
   - Async Action using Redux Thunk Middleware
 
+- Section 02
+
+
 ## Technologies
 
 I have used `node.js`, `redux`
@@ -37,6 +40,8 @@ I have used `node.js`, `redux`
   - redux | https://www.npmjs.com/package/redux
   - redux-logger | https://www.npmjs.com/package/redux-logger
   - redux-thunk | https://www.npmjs.com/package/redux-thunk
+  - @reduxjs/toolkit | https://www.npmjs.com/package/@reduxjs/toolkit
+  
 
 ## Status
 
