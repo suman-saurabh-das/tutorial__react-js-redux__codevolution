@@ -24,7 +24,16 @@ React Redux (redux-toolkit) Tutorial - by Codevolution
   - Async Action using Redux Thunk Middleware
 
 - Section 02
+  - Introduction to Redux-toolkit & Project setup
+  - CakeSlice created to group reducers and actions together
+  - Configuring the store and dispatching actions
+  - Added icecream feature to app
+  - Logger Middleware
+  - Extra reducers
+  - Async Thunks
 
+- Section 03
+  - 
 
 ## Technologies
 
