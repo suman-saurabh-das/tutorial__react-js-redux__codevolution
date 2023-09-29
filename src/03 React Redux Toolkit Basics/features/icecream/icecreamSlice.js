@@ -24,4 +24,4 @@ const icecreamSlice = createSlice({
 })
 
 export default icecreamSlice.reducer
-export { ordered, restocked } from icecreamSlice.actions
+export const { ordered, restocked } = icecreamSlice.actions
