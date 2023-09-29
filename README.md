@@ -50,7 +50,7 @@ I have used `node.js`, `redux`
   - redux-logger | https://www.npmjs.com/package/redux-logger
   - redux-thunk | https://www.npmjs.com/package/redux-thunk
   - @reduxjs/toolkit | https://www.npmjs.com/package/@reduxjs/toolkit
-  
+  - react-redux | https://www.npmjs.com/package/react-redux
 
 ## Status
 
