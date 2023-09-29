@@ -33,7 +33,11 @@ React Redux (redux-toolkit) Tutorial - by Codevolution
   - Async Thunks
 
 - Section 03
-  - 
+  - React redux project setup
+  - Provider
+  - useSelector, useDispatch
+  - redux devtools
+  - fetching data
 
 ## Technologies
 
